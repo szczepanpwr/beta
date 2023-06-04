@@ -1,26 +1,26 @@
-<div id="<%= dom_id animal %>">
+<div class="container", id="<%= dom_id animal %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Imię:</strong>
     <%= animal.name %>
   </p>
 
   <p>
-    <strong>Breed:</strong>
+    <strong>Rasa:</strong>
     <%= animal.breed %>
   </p>
 
   <p>
-    <strong>Age:</strong>
+    <strong>Wiek:</strong>
     <%= animal.age %>
   </p>
 
   <p>
-    <strong>Enjoys:</strong>
+    <strong>Co lubi robić:</strong>
     <%= animal.enjoys %>
   </p>
 
   <p>
-    <strong>Image:</strong>
+    <strong>Zdjęcie:</strong>
     <br>
     <%= link_to image_tag(animal.image_as_thumbnail), animal.image%>
   </p>
