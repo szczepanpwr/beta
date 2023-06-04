@@ -8,6 +8,7 @@ class AnimalsController < ApplicationController
 
   # GET /animals/1 or /animals/1.json
   def show
+    @adoptions = @animal.adoptions.order(created_at: :desc)
   end
 
   # GET /animals/new

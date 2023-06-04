@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Adoptions</h1>
+
+<div id="adoptions">
+  <% @adoptions.each do |adoption| %>
+    <%= render adoption %>
+    <p>
+      <%= link_to "Show this adoption", adoption %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New adoption", new_adoption_path %>

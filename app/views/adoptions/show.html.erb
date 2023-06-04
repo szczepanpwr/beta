@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @adoption %>
+
+<div>
+  <%= link_to "Edit this adoption", edit_adoption_path(@adoption) %> |
+  <%= link_to "Back to adoptions", adoptions_path %>
+
+  <%= button_to "Destroy this adoption", @adoption, method: :delete %>
+</div>

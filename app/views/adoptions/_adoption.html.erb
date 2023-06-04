@@ -1,0 +1,24 @@
+<div class="adoption-<%= adoption.id %> container">
+  <%= adoption.user.email%>
+  <br>
+  <% if current_user = adoption.user%>
+    <div class="button-group float-end">
+      <%= button_to "Delete", [animal, adoption], class:"btn btn-danger", method: :delete %>
+    </div>
+  <% end %>
+  <hr />
+  <p>
+    <strong>Name:</strong>
+    <%= adoption.name %>
+  </p>
+
+  <p>
+    <strong>Breed:</strong>
+    <%= adoption.email %>
+  </p>
+
+  <p>
+    <strong>Age:</strong>
+    <%= adoption.description %>
+  </p>
+</div>
