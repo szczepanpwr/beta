@@ -1,0 +1,13 @@
+<%= form_with(model: [animal, animal.adoptions.build]) do |form| %>
+  <div class="form-control">
+    <br>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.text_field :email %>'
+    <br>
+    <%= form.text_area :description %>
+    <br>
+    <%= form.submit "Submit", class: "btn btn-primary mt-1" %>
+  </div>
+
+<% end %>

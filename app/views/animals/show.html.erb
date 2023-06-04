@@ -2,9 +2,17 @@
 
 <%= render @animal %>
 
-<div>
+<div >
   <%= link_to "Edit this animal", edit_animal_path(@animal) %> |
   <%= link_to "Back to animals", animals_path %>
 
   <%= button_to "Destroy this animal", @animal, method: :delete %>
 </div>
+<br>
+<div class="container" >
+  <%= render 'adoptions/form', animal: @animal %>
+  <% @adoptions.each do |adoption| %>
+    <%= render 'adoptions/adoption', animal: @animal, adoption: adoption %>
+  <% end %>
+</div>
+
