@@ -1,5 +1,7 @@
 class AnimalsController < ApplicationController
   before_action :set_animal, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: %i[ index ]
+  before_action :authenticate_admin!, only: %i[ new edit create update destroy]
 
   # GET /animals or /animals.json
   def index
@@ -59,6 +61,9 @@ class AnimalsController < ApplicationController
   end
 
   private
+    def authenticate_admin!
+      redirect_to root_path, alert: "You're not authorized to do that." unless current_user.admin?
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_animal
       @animal = Animal.find(params[:id])

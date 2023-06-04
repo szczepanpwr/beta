@@ -1,12 +1,12 @@
 <div class="adoption-<%= adoption.id %> container">
   <%= adoption.user.email%>
   <br>
-  <% if current_user = adoption.user%>
+  <% if current_user == adoption.user || current_user.admin?%>
     <div class="button-group float-end">
       <%= button_to "Delete", [animal, adoption], class:"btn btn-danger", method: :delete %>
     </div>
+
   <% end %>
-  <hr />
   <p>
     <strong>Name:</strong>
     <%= adoption.name %>
@@ -20,5 +20,12 @@
   <p>
     <strong>Age:</strong>
     <%= adoption.description %>
+  </p>
+  <p>
+    <% if (adoption.updated_at - adoption.created_at) > 1%>
+      <span> Request from <%= time_ago_in_words(adoption.updated_at) %> ago </span>
+    <% else %>
+      <span> Request from <%= time_ago_in_words(adoption.created_at) %> ago </span>
+    <% end %>
   </p>
 </div>
