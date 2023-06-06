@@ -1,12 +1,15 @@
-<p style="color: green"><%= notice %></p
+<html data-bs-theme="light">
+  <p style="color: green"><%= notice %></p>
 
-<div id="animals">
-  <% @animals.each do |animal| %>
-    <%= render animal %>
-    <p>
-      <%= link_to "Show this animal", animal %>
-    </p>
-  <% end %>
-</div>
 
-<%= link_to "New animal", new_animal_path %>
+  <div id="animals">
+    <% @animals.each do |animal| %>
+      <%= render animal %>
+      <p>
+        <%= link_to "Show this animal", animal %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New animal", new_animal_path %>
+</html>

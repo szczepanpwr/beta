@@ -1,13 +1,18 @@
 <%= form_with(model: [animal, animal.adoptions.build]) do |form| %>
-  <div class="form-control">
-    <br>
-    <%= form.text_field :name %>
-    <br>
-    <%= form.text_field :email %>'
-    <br>
-    <%= form.text_area :description %>
-    <br>
-    <%= form.submit "Submit", class: "btn btn-primary mt-1" %>
+  <h3>Formularz Adopcyjny zwierzaka <%= @animal.name %> </h3>
+  <form>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Imię i Nazwisko</label>
+    <%= form.text_field :name, class: 'form-control', placeholder: 'Wpisz swoje Imię i Nazwisko' %>
   </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Adres Email</label>
+    <%= form.text_field :email, class: 'form-control', placeholder: 'Wpisz swój adres email' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Twój opis, dlaczego jesteś dobrym kandydatem, aby dokonać adopcji zwierzaka</label>
+    <%= form.text_field :description, class: 'form-control', placeholder: 'Jestem dobrym kandydatem, ponieważ... ' %>
+  </div>
+  <%= form.submit "Submit", class: "btn btn-primary mt-1" %>
 
 <% end %>

@@ -1,18 +1,23 @@
 <p style="color: green"><%= notice %></p>
-<div style="text-align: center;">
-  <%= render @animal %>
-</div>
-<div >
-  <%= link_to "Edit this animal", edit_animal_path(@animal) %> |
-  <%= link_to "Back to animals", animals_path %>
+<body class="bg-primary-subtle">
+  <div style="text-align: center;">
+    <%= render @animal %>
+  </div>
+  <div >
+    <% if current_user.admin? %>
+    <%= link_to "Edit this animal", edit_animal_path(@animal) %>
+    <%= button_to "Destroy this animal", @animal, method: :delete %>
+    
+    <% end %>
 
-  <%= button_to "Destroy this animal", @animal, method: :delete %>
-</div>
-<br>
-<div class="container" >
-  <%= render 'adoptions/form', animal: @animal %>
-  <% @adoptions.each do |adoption| %>
-    <%= render 'adoptions/adoption', animal: @animal, adoption: adoption %>
-  <% end %>
-</div>
+    <%= link_to "Back to animals", animals_path %>
+  </div>
+  <br>
+  <div class="container" >
+    <%= render 'adoptions/form', animal: @animal %>
+    <% @adoptions.each do |adoption| %>
+      <%= render 'adoptions/adoption', animal: @animal, adoption: adoption %>
+    <% end %>
+  </div>
+</body>
 
