@@ -1,28 +1,23 @@
 <div class="container", id="<%= dom_id animal %>">
-  <p>
-    <strong>Imię:</strong>
-    <%= animal.name %>
-  </p>
-
-  <p>
-    <strong>Rasa:</strong>
-    <%= animal.breed %>
-  </p>
-
-  <p>
-    <strong>Wiek:</strong>
-    <%= animal.age %>
-  </p>
-
-  <p>
-    <strong>Co lubi robić:</strong>
-    <%= animal.enjoys %>
-  </p>
-
-  <p>
+  <div class="row">
+    <div class="col">
+      <br>
+      <strong>Imię:</strong>
+      <%= animal.name %>
+      <br>
+      <strong>Rasa:</strong>
+      <%= animal.breed %>
+      <br>
+      <strong>Wiek:</strong>
+      <%= animal.age %>
+      <br>
+      <strong>Co lubi robić:</strong>
+      <%= animal.enjoys %>
+    </div>
+    <div class="col">
     <strong>Zdjęcie:</strong>
-    <br>
-    <%= link_to image_tag(animal.image_as_thumbnail), animal.image%>
-  </p>
+      <%= link_to image_tag(animal.image_as_thumbnail), animal.image%>
+    </div>
+  </div>
 
 </div>
