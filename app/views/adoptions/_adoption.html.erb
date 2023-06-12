@@ -1,29 +1,32 @@
 <% if current_user == adoption.user || current_user.admin?%>
-  <div class="adoption-<%= adoption.id %> container">
-    <%= adoption.user.email%>
+  <br>
+  <div class="adoption-<%= adoption.id %> container border border-secondary">
+    <% if current_user.admin?%>
+      <%= adoption.user.email%>
+    <% end %>
     <br>
     <div class="button-group float-end">
       <%= button_to "Delete", [animal, adoption], class:"btn btn-danger", method: :delete %>
     </div>
     <p>
-      <strong>Name:</strong>
+      <strong>Imię i Nazwisko:</strong>
       <%= adoption.name %>
     </p>
 
     <p>
-      <strong>Breed:</strong>
+      <strong>Adres Email:</strong>
       <%= adoption.email %>
     </p>
 
     <p>
-      <strong>Age:</strong>
+      <strong>Opis:</strong>
       <%= adoption.description %>
     </p>
     <p>
       <% if (adoption.updated_at - adoption.created_at) > 1%>
-        <span> Request from <%= time_ago_in_words(adoption.updated_at) %> ago </span>
+        <span> Zgłoszenie złożone <%= time_ago_in_words(adoption.updated_at) %> temu </span>
       <% else %>
-        <span> Request from <%= time_ago_in_words(adoption.created_at) %> ago </span>
+        <span> Zgłoszenie złożone <%= time_ago_in_words(adoption.created_at) %> temu </span>
       <% end %>
     </p>
   </div>

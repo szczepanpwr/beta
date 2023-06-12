@@ -1,23 +1,32 @@
-<p style="color: green"><%= notice %></p>
 <body class="bg-primary-subtle">
-  <div style="text-align: center;">
-    <%= render @animal %>
-  </div>
+  <%= render @animal %>
   <div >
     <% if current_user.admin? %>
-    <%= button_to "Edit this animal", edit_animal_path(@animal) %>
-    <%= button_to "Destroy this animal", @animal, method: :delete %>
-    
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <%= button_to "Edit this animal", edit_animal_path(@animal),class:"btn btn-warning", method: :get  %>
+        </div>
+        <div class="col text-center">
+          <%= button_to "Destroy this animal", @animal,class:"btn btn-danger", method: :delete %>
+        </div>
+      </div>
+    </div>
     <% end %>
-
-    <%= link_to "Back to animals", animals_path %>
+    <br>
+    <div class="text-center">
+      <%= button_to "Back to animals", animals_path,class:"btn btn-primary", method: :get %>
+    </div>
   </div>
   <br>
   <div class="container" >
+    <br>
     <%= render 'adoptions/form', animal: @animal %>
     <% @adoptions.each do |adoption| %>
       <%= render 'adoptions/adoption', animal: @animal, adoption: adoption %>
     <% end %>
+    <br>
   </div>
 </body>
 

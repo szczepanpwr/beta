@@ -1,15 +1,21 @@
-<html data-bs-theme="light">
-  <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 
-  <div id="animals">
-    <% @animals.each do |animal| %>
-      <%= render animal %>
-      <p>
-        <%= link_to "Show this animal", animal %>
-      </p>
-    <% end %>
-  </div>
+<div id="animals">
+  <% @animals.each do |animal| %>
+    <%= render animal %>
+    <br>
+    <div class="text-center">
+      <%= button_to "Show this animal", animal, class:"btn btn-primary", method: :get  %>
+    </div>
+    <br>
+  <% end %>
+</div>
 
-  <%= link_to "New animal", new_animal_path %>
-</html>
+<% if current_user %>
+  <% if current_user.admin? %>
+    <div class="text-center">
+      <%= button_to "New animal", new_animal_path, class:"btn btn-dark", method: :get %>
+    </div>
+  <% end %>
+<% end %>
