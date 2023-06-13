@@ -1,16 +1,36 @@
-<h2>Forgot your password?</h2>
+<br>
+<div class="text-center">
+  <h2>Zapomniałeś hasła ?</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  
+  <div class="container mt-5 pt-5">
+    <div class="row">
+      <div class="col-12 col-sm-8 col-md-6 m-auto">
+        <div class="card border-0 shadow">
+          <div class="card-body">
+            <div class="text-center">
+              <svg class="mx-auto my-3" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-lock" viewBox="0 0 16 16">
+                <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 5.996V14H3s-1 0-1-1 1-4 6-4c.564 0 1.077.038 1.544.107a4.524 4.524 0 0 0-.803.918A10.46 10.46 0 0 0 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h5ZM9 13a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2Zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1Z"/>
+              </svg>
+            </div>
+            <br>
+            <form>
+              <div class="form-group">
+                  <%= f.email_field :email, autofocus: true,class: 'form-control', placeholder:"Adres Email", autocomplete: "email" %>
+                <br>
+              </div>
+              <div class="text-center actions">
+                <%= f.submit "Wyślij mi instrukcję odzyskania hasła", class: "btn btn-primary mt-1" %>
+              </div>
+            </form>
+            <br>
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
