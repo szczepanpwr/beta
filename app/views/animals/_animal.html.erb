@@ -1,4 +1,7 @@
-<div class="container", id="<%= dom_id animal %>">
+<div class="container padding", id="<%= dom_id animal %>">
+      <br>
+      <h1 class="text-center"> <%= animal.name %></h1>
+      <br>
   <div class="row">
     <div class="col">
       <br>
@@ -16,7 +19,7 @@
       <%= animal.enjoys %>
     </div>
     <div class="col">
-      <%= link_to image_tag(animal.image_as_thumbnail), animal.image%>
+      <%= link_to image_tag(animal.image_as_thumbnail), animal.image, class:"img-fluid"%>
     </div>
   </div>
 </div>

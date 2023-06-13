@@ -1,6 +1,6 @@
 <% if current_user == adoption.user || current_user.admin?%>
   <br>
-  <div class="adoption-<%= adoption.id %> container border border-secondary">
+  <div class="adoption-<%= adoption.id %> container-fluid padding border border-secondary">
     <% if current_user.admin?%>
       <%= adoption.user.email%>
     <% end %>

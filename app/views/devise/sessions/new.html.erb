@@ -3,31 +3,43 @@
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="container text-center">
-    <br>
-    <form>
-      <div class="form-group">
-        <label> Adres Email </label>
-        <br>
-        <%= f.email_field :email, autofocus: true,class: 'form-control', placeholder:"Wpisz swój adres email", autocomplete: "email" %>
-        <br>
-      </div>
-      <div class="form-group">
-        <label> Hasło </label><br>
-        <%= f.password_field :password, autofocus: true,class: 'form-control', placeholder:"Wpisz swoje", autocomplete: "current-password" %>
-        <br>
-      </div>
-      <% if devise_mapping.rememberable? %>
-        <div class="form-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+  <div class="container mt-5 pt-5">
+    <div class="row">
+      <div class="col-12 col-sm-8 col-md-6 m-auto">
+        <div class="card border-0 shadow">
+          <div class="card-body">
+            <div class="text-center">
+              <svg class="mx-auto my-3" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+            </div>
+            <br>
+            <form>
+              <div class="form-group">
+                  <%= f.email_field :email, autofocus: true,class: 'form-control', placeholder:"Adres Email", autocomplete: "email" %>
+                <br>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password, autofocus: true,class: 'form-control', placeholder:"Hasło", autocomplete: "current-password" %>
+                <br>
+              </div>
+              <% if devise_mapping.rememberable? %>
+                <div class="form-group text-center">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end %>
+              <br>
+              <div class="text-center">
+                <%= f.submit "Log in", class: "btn btn-primary mt-1" %>
+              </div>
+            </form>
+            <br>
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
-      <% end %>
-      <div class="text-center">
-        <%= f.submit "Log in", class: "btn btn-primary mt-1" %>
       </div>
-    </form>
+    </div>
   </div>
 <% end %>
-<br>
-<%= render "devise/shared/links" %>
