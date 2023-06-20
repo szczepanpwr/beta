@@ -6,17 +6,17 @@
     <div class="container">
       <div class="row">
         <div class="col text-center">
-          <%= button_to "Edit this animal", edit_animal_path(@animal),class:"btn btn-warning mt-1", method: :get  %>
+          <%= button_to "Edytuj tego zwierzaka", edit_animal_path(@animal),class:"btn btn-warning mt-1", method: :get  %>
         </div>
         <div class="col text-center">
-          <%= button_to "Destroy this animal", @animal,class:"btn btn-danger", method: :delete %>
+          <%= button_to "Usuń tego zwierzaka", @animal,class:"btn btn-danger", method: :delete %>
         </div>
       </div>
     </div>
     <% end %>
     <br>
     <div class="text-center">
-      <%= button_to "Back to animals", animals_path,class:"btn btn-primary", method: :get %>
+      <%= button_to "Powrót do listy zwierząt", animals_path,class:"btn btn-primary", method: :get %>
     </div>
   </div>
   <br>

@@ -21,3 +21,16 @@
     background-size: cover;
  }
  */
+ .banner{
+   height: 100vh;
+   width: 120vw;
+   background:url('https://i.ytimg.com/vi/Ssu9oP5pBEc/maxresdefault.jpg');
+   background-position: top;
+   background-size: cover;
+   background-repeat: no-repeat;
+ }
+/*
+ <div>
+    <img src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg" class="img-fluid" alt="Responsive image">
+</div>
+*/

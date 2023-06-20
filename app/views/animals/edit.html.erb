@@ -1,11 +1,23 @@
-<h1>Editing animal</h1>
+<div class="text-center">
+  <br>
+  <h1>Edytuj zwierzaka <%= @animal.name%></h1>
+</div>
 <div class="container">
   <%= render "form", animal: @animal %>
 
   <br>
-
-  <div>
-    <%= link_to "Show this animal", @animal %> |
-    <%= link_to "Back to animals", animals_path %>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="text-center">
+          <%= button_to "Pokaz tego zwierzaka", @animal, class:"btn btn-primary mt-1", method: :get %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="text-center">
+          <%= button_to "Powrót do listy zwierząt", animals_path, class:"btn btn-primary mt-1", method: :get %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

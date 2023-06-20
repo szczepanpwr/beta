@@ -1,12 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-
 <div id="animals">
   <% @animals.each do |animal| %>
     <%= render animal %>
     <br>
     <div class="text-center">
-      <%= button_to "Show this animal", animal, class:"btn btn-primary mt-1", method: :get  %>
+      <%= button_to "Pokaz zwierzaka", animal, class:"btn btn-primary mt-1", method: :get  %>
     </div>
     <br>
   <% end %>
@@ -15,7 +12,7 @@
 <% if current_user %>
   <% if current_user.admin? %>
     <div class="text-center">
-      <%= button_to "New animal", new_animal_path, class:"btn btn-dark mt-1", method: :get %>
+      <%= button_to "Dodaj nowego zwierzaka", new_animal_path, class:"btn btn-dark mt-1", method: :get %>
     </div>
   <% end %>
 <% end %>

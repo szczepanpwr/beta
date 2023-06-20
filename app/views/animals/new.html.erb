@@ -1,9 +1,11 @@
-<h1>New animal</h1>
+<div class="text-center">
+  <h1>Dodaj Zwierzaka</h1>
+</div>
 
 <%= render "form", animal: @animal %>
 
 <br>
 
-<div>
-  <%= link_to "Back to animals", animals_path %>
+<div class="text-center">
+  <%= button_to "Powrót do listy zwierząt", animals_path,class:"btn btn-primary mt-1", method: :get %>
 </div>
