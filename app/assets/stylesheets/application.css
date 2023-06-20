@@ -21,16 +21,49 @@
     background-size: cover;
  }
  */
+ /*
  .banner{
    height: 100vh;
-   width: 120vw;
+   width: 100%;
    background:url('https://i.ytimg.com/vi/Ssu9oP5pBEc/maxresdefault.jpg');
    background-position: top;
    background-size: cover;
    background-repeat: no-repeat;
  }
+ */
 /*
  <div>
     <img src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg" class="img-fluid" alt="Responsive image">
 </div>
 */
+.banner{
+	height: 100vh;
+	width: 100%;
+	background:url('overlay.png'),url('schronisko2.jpg');
+	background-position: top;
+	background-size:cover;
+	/*background-attachment: fixed;*/
+	background-repeat: no-repeat;
+}
+.banner .info{
+	margin-top:15%;
+	transform: translateY(-15%);
+}
+.banner .info p{
+	font-size: 2em;
+	font-weight: 500;
+	color: #aaa;
+	letter-spacing: 2px;
+}
+.banner .info a{
+	margin-left:50%;
+	transform: translateX(-50%);
+	color: #fff;
+	background: #e91d43;
+	padding:10px 20px; 
+	font-size: 2em;
+	font-weight: 600;
+}
+.banner .info a:hover{
+	background: #e91e63;
+}
